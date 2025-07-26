@@ -1,41 +1,41 @@
-import { motion } from 'framer-motion'
-import { Download, Calendar, MapPin, Mail } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Download, Calendar, MapPin, Mail } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'Node.js', level: 80 },
-    { name: 'Python', level: 75 },
-    { name: 'AWS', level: 70 },
-    { name: 'Docker', level: 65 },
-  ]
+    { name: 'React', level: 70 },
+    { name: 'Firebase', level: 65 },
+    { name: 'Figma (UI/UX)', level: 80 },
+    { name: 'HTML/CSS/JS', level: 75 },
+    { name: 'Git & GitHub', level: 60 },
+    { name: 'Project Management', level: 70 },
+  ];
 
   const experience = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading frontend development for web applications using React and TypeScript.',
+      title: 'Intern – Software Developer',
+      company: 'Ministry of Innovation & Technology',
+      period: '2023',
+      description: 'Worked on real-world full-stack web projects, collaborated in teams, and contributed to national tech initiatives.',
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Startup Inc',
-      period: '2020 - 2022',
-      description: 'Developed full-stack applications using modern technologies and best practices.',
+      title: 'Digital Contributor & Organizer',
+      company: 'TechEt',
+      period: '2023',
+      description: 'Worked on website projects, hosted tech podcasts, and helped organize local events around innovation and coding.',
     },
     {
-      title: 'Junior Developer',
-      company: 'Digital Agency',
-      period: '2018 - 2020',
-      description: 'Started my journey in web development, learning various technologies.',
+      title: 'University Projects',
+      company: 'Addis Ababa University',
+      period: '2019 – 2023',
+      description: 'Completed several academic projects, including an Emergency Reporting and Safety Awareness System and a portfolio website using GitHub Pages.',
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,8 +44,8 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl font-bold text-gray-900 mb-6">About Me</h1>
-            <p className="text-xl text-gray-600 mb-8">
-              I'm a passionate developer with a love for creating innovative solutions
+            <p className="text-xl text-gray-700 mb-8">
+              Recent graduate, aspiring full-stack developer, and passionate about building meaningful tech for communities.
             </p>
           </motion.div>
         </div>
@@ -55,6 +55,7 @@ const About = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -63,36 +64,36 @@ const About = () => {
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Who I Am</h2>
               <p className="text-lg text-gray-600 mb-6">
-                I'm a dedicated full-stack developer with over 5 years of experience in creating
-                web applications. I love solving complex problems and turning ideas into reality
-                through clean, efficient code.
+                I’m a graduate in Information Systems with hands-on experience in UX/UI design, React, and Firebase. I enjoy creating applications that solve real-world problems — especially those that matter to my local community.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                When I'm not coding, you can find me exploring new technologies, contributing to
-                open-source projects, or sharing knowledge with the developer community.
+                I believe in learning by doing, and I'm currently building projects to grow my skills and confidence. Whether it's designing user-friendly interfaces or coding backend logic, I’m always ready to explore and improve.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-primary-600" />
-                  <span className="text-gray-600">5+ years of experience</span>
+                  <span className="text-gray-600">Graduate, 2023</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-primary-600" />
-                  <span className="text-gray-600">Based in Your City</span>
+                  <span className="text-gray-600">Based in Addis Ababa, Ethiopia</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary-600" />
-                  <span className="text-gray-600">your.email@example.com</span>
+                  <span className="text-gray-600">ruth@example.com</span>
                 </div>
               </div>
 
-              <button className="btn-primary mt-8 inline-flex items-center gap-2">
-                <Download size={20} />
-                Download Resume
-              </button>
+              <a href="/Ruth-Dehene-Resume.pdf" download>
+                <button className="btn-primary mt-8 inline-flex items-center gap-2">
+                  <Download size={20} />
+                  Download Resume
+                </button>
+              </a>
             </motion.div>
 
+            {/* Right Column - Skills */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -101,16 +102,16 @@ const About = () => {
               className="bg-white p-8 rounded-xl shadow-lg"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Skills</h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {skills.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
+                    <div className="flex justify-between mb-1">
                       <span className="font-medium text-gray-700">{skill.name}</span>
-                      <span className="text-gray-500">{skill.level}%</span>
+                      <span className="text-sm text-gray-500">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div
-                        className="bg-primary-600 h-2 rounded-full transition-all duration-300"
+                        className="bg-gray-800 h-2 rounded-full transition-all duration-300"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -134,7 +135,7 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Experience</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              My professional journey in software development
+              The experiences that shaped me as a young developer
             </p>
           </motion.div>
 
@@ -148,11 +149,11 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl shadow-lg"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                   <h3 className="text-2xl font-bold text-gray-900">{exp.title}</h3>
                   <span className="text-primary-600 font-medium">{exp.period}</span>
                 </div>
-                <p className="text-lg text-gray-600 mb-4">{exp.company}</p>
+                <p className="text-lg text-gray-700 font-medium mb-1">{exp.company}</p>
                 <p className="text-gray-600">{exp.description}</p>
               </motion.div>
             ))}
@@ -160,7 +161,7 @@ const About = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default About 
+export default About;
